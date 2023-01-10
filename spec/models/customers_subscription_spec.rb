@@ -2,8 +2,8 @@ require 'rails_helper'
 
 RSpec.describe CustomersSubscription, type: :model do
   describe 'relationships' do
-    it { should belong_to :customers }
-    it { should belong_to :subscriptions }
+    it { should belong_to :customer }
+    it { should belong_to :subscription }
   end
 
   describe 'validations' do
