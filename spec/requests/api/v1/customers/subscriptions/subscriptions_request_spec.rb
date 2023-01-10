@@ -7,13 +7,14 @@ describe 'GET all subscriptions for a specific customer' do
         customer = create(:customer)
         customer_active_subs = create_list(:customers_subscription, 5, customer: customer)
         customer_cancelled_subs = create_list(:customers_subscription, 5, customer: customer, status: 1)
-
+        
         params = {
-          'api_key'=> customer.api_key
+          api_key: customer.api_key
         }
-
-        get '/api/v1/customers/subscriptions'
-
+        
+        get api_v1_customer_subscriptions_path, params: params
+        
+        require 'pry'; binding.pry
         json
       end
     end
