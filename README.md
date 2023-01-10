@@ -94,7 +94,7 @@ ___
 
 #### Request Structure
 ```
-POST */customer/subscriptions/subscription_type
+POST */customer_subscription
 ```
 #### Sample Response
 ```
@@ -110,7 +110,7 @@ ___
 
 #### Request Structure
 ```
-PATCH */customer/subscriptions
+PATCH/PUT */customer_subscription
 ```
 #### Sample Response
 ```
