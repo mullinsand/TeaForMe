@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_01_10_025234) do
+ActiveRecord::Schema.define(version: 2023_01_10_033206) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,13 +25,13 @@ ActiveRecord::Schema.define(version: 2023_01_10_025234) do
   end
 
   create_table "customers_subscriptions", force: :cascade do |t|
-    t.bigint "customers_id", null: false
-    t.bigint "subscriptions_id", null: false
     t.integer "status", default: 0
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["customers_id"], name: "index_customers_subscriptions_on_customers_id"
-    t.index ["subscriptions_id"], name: "index_customers_subscriptions_on_subscriptions_id"
+    t.bigint "subscription_id", null: false
+    t.bigint "customer_id", null: false
+    t.index ["customer_id"], name: "index_customers_subscriptions_on_customer_id"
+    t.index ["subscription_id"], name: "index_customers_subscriptions_on_subscription_id"
   end
 
   create_table "subscriptions", force: :cascade do |t|
@@ -43,12 +43,12 @@ ActiveRecord::Schema.define(version: 2023_01_10_025234) do
   end
 
   create_table "subscriptions_teas", force: :cascade do |t|
-    t.bigint "teas_id", null: false
-    t.bigint "subscriptions_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["subscriptions_id"], name: "index_subscriptions_teas_on_subscriptions_id"
-    t.index ["teas_id"], name: "index_subscriptions_teas_on_teas_id"
+    t.bigint "subscription_id", null: false
+    t.bigint "tea_id", null: false
+    t.index ["subscription_id"], name: "index_subscriptions_teas_on_subscription_id"
+    t.index ["tea_id"], name: "index_subscriptions_teas_on_tea_id"
   end
 
   create_table "teas", force: :cascade do |t|
@@ -60,8 +60,8 @@ ActiveRecord::Schema.define(version: 2023_01_10_025234) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  add_foreign_key "customers_subscriptions", "customers", column: "customers_id"
-  add_foreign_key "customers_subscriptions", "subscriptions", column: "subscriptions_id"
-  add_foreign_key "subscriptions_teas", "subscriptions", column: "subscriptions_id"
-  add_foreign_key "subscriptions_teas", "teas", column: "teas_id"
+  add_foreign_key "customers_subscriptions", "customers"
+  add_foreign_key "customers_subscriptions", "subscriptions"
+  add_foreign_key "subscriptions_teas", "subscriptions"
+  add_foreign_key "subscriptions_teas", "teas"
 end
