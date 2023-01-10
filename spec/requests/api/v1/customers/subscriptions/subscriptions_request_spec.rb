@@ -5,8 +5,8 @@ describe 'GET all subscriptions for a specific customer' do
     context 'one or more subscriptions' do
       it 'returns a JSON object with an array that contains each subscription, active and cancelled' do
         customer = create(:customer)
-        customer_active_subs = create_list(:customers_subscription, 5, customer: customer)
-        customer_cancelled_subs = create_list(:customers_subscription, 5, customer: customer, status: 1)
+        customer_active_subs = create_list(:customers_subscription, 3, customer: customer)
+        customer_cancelled_sub = create(:customers_subscription, customer: customer, status: 1)
         
         params = {
           api_key: customer.api_key
@@ -14,8 +14,10 @@ describe 'GET all subscriptions for a specific customer' do
         
         get api_v1_customer_subscriptions_path, params: params
         
-        require 'pry'; binding.pry
-        json
+        expect(response).to have_http_status(200)
+        expect(json[:data]).to be_an(Array)
+        expect(json[:data].first[:type]).to eq("subscription")
+        expect(json[:data].last[:id]).to eq(customer_cancelled_sub.subscription.id.to_s)
       end
     end
 
