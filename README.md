@@ -15,7 +15,7 @@ Built in Rails on a Postgresql database and written in Ruby.
 </p>
 
 ## GitHub Repo
-### [Github](https://github.com/mullinsand/TeaForMe)
+### [TeaForMe](https://github.com/mullinsand/TeaForMe)
 
 ## Setup
 
@@ -39,7 +39,7 @@ Built in Rails on a Postgresql database and written in Ruby.
 
 This section describes the endpoints in the backend API. For each endpoint, the Request Structure is displayed as a sample request sent to a root url. The Sample Response exposes an example JSON response.
 
-### get all customer's subscriptions endpoint
+### Get all customer's subscriptions endpoint
 
 #### Request Structure
 ```
@@ -54,13 +54,35 @@ GET */customer/subscriptions
                 "id": "1",
                 "title": "Gary's Teas",
                 "price": "27",
-                "frequency": "5"
+                "frequency": "12",
+                "teas": [
+                  {
+                    "title": "black tea",
+                    "description": "A blackish tea",
+                    "brew_time": "3",
+                    "temperature": "185"
+                  }
+                ]
             },
             {
-                "id": "1",
+                "id": "2",
                 "title": "Larry's Teas",
                 "price": "29",
-                "frequency": "7"
+                "frequency": "52",
+                "teas": [
+                  {
+                    "title": "black tea",
+                    "description": "A black tea",
+                    "brew_time": "3",
+                    "temperature": "185"
+                  },
+                  {
+                    "title": "kinda black tea",
+                    "description": "A blackish tea",
+                    "brew_time": "7",
+                    "temperature": "200"
+                  }
+                ]
             },
         ]
     }
@@ -68,7 +90,7 @@ GET */customer/subscriptions
 ```
 ___
 
-### subscribe a customer to a tea subscription endpoint
+### Subscribe a customer to a tea subscription endpoint
 
 #### Request Structure
 ```
@@ -88,7 +110,7 @@ ___
 
 #### Request Structure
 ```
-DELETE */customer/subscriptions
+PATCH */customer/subscriptions
 ```
 #### Sample Response
 ```
