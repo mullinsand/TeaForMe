@@ -48,44 +48,29 @@ GET */customer/subscriptions
 #### Sample Response
 ```
 {
-    "data": {
-        "subscriptions": [
-            {
-                "id": "1",
-                "title": "Gary's Teas",
-                "price": "27",
-                "frequency": "12",
-                "teas": [
-                  {
-                    "title": "black tea",
-                    "description": "A blackish tea",
-                    "brew_time": "3",
-                    "temperature": "185"
-                  }
-                ]
+    "data": [
+        {
+            "id": "1",
+            "type": "subscription",
+            "attributes": {
+                "title": "Tea for meee",
+                "price": 1232,
+                "frequency": 12,
+                "created_at": "2023-01-10T21:50:08.849Z",
+                "updated_at": "2023-01-10T21:50:08.849Z"
             },
-            {
-                "id": "2",
-                "title": "Larry's Teas",
-                "price": "29",
-                "frequency": "52",
-                "teas": [
-                  {
-                    "title": "black tea",
-                    "description": "A black tea",
-                    "brew_time": "3",
-                    "temperature": "185"
-                  },
-                  {
-                    "title": "kinda black tea",
-                    "description": "A blackish tea",
-                    "brew_time": "7",
-                    "temperature": "200"
-                  }
-                ]
-            },
-        ]
-    }
+            "relationships": {
+                "teas": {
+                    "data": [
+                        {
+                            "id": "1",
+                            "type": "tea"
+                        }
+                    ]
+                }
+            }
+        }
+    ]
 }
 ```
 ___
@@ -94,7 +79,7 @@ ___
 
 #### Request Structure
 ```
-POST */customer/subscriptions/subscription_type
+POST */customer_subscription
 ```
 #### Sample Response
 ```
@@ -110,7 +95,7 @@ ___
 
 #### Request Structure
 ```
-PATCH */customer/subscriptions
+PATCH/PUT */customer_subscription
 ```
 #### Sample Response
 ```
