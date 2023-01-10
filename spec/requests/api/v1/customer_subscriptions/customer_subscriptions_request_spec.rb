@@ -12,7 +12,7 @@ describe 'POST a customer_subscription' do
         }
         
         post '/api/v1/customer_subscriptions', params: params
-  
+
         expect(response).to have_http_status(200)
         expect(json[:message]).to eq("Customer successfully subscribed")
         expect(customer.subscriptions).to eq([sub1])
