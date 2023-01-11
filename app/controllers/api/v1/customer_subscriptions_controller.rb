@@ -2,8 +2,7 @@ class Api::V1::CustomerSubscriptionsController < ApplicationController
   include ExceptionHandler
   
   def create
-    customer = Customer.find_by(api_key: customer_subscriptions_params[:api_key])
-    raise ActiveRecord::RecordNotFound.new "Couldn't find customer with api key #{customer_subscriptions_params[:api_key]}" if customer.nil?
+    customer = find_customer
 
     subscription = Subscription.find(customer_subscriptions_params[:sub_id])
     return render json: { message: "Customer already subscribed"} if already_subscribed?(customer)
