@@ -12,7 +12,6 @@ class Api::V1::CustomerSubscriptionsController < ApplicationController
     if customer_sub.save
       render json: { message: "Customer successfully subscribed"}
     end
-    #can't have duplicates: logic needed
   end
 
   private
