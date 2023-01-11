@@ -84,9 +84,7 @@ POST */customer_subscription
 #### Sample Response
 ```
 {
-    "data": {
-        "message": "Customer successfully subscribed"
-    }
+    "message": "Customer successfully subscribed"
 }
 ```
 ___
@@ -100,9 +98,7 @@ PATCH/PUT */customer_subscription
 #### Sample Response
 ```
 {
-    "data": {
-        "message": "Customer successfully unsubscribed"
-    }
+    "message": "Customer successfully unsubscribed"
 }
 ```
 ___
