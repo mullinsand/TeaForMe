@@ -6,7 +6,7 @@ Rails.application.routes.draw do
       resource :customer, only: [] do
         resources :subscriptions, only: [:index]
       end
-      resources :customer_subscriptions, only: [:create, :update]
+      resource :customer_subscriptions, only: [:create, :update]
     end
   end
 end
