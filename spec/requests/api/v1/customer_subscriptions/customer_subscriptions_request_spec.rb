@@ -19,6 +19,25 @@ describe 'POST a customer_subscription' do
       end
     end
 
+    context 'customer already subscriped to this subscription' do
+      it 'does not create another customer_subscription and instead returns message' do
+        customer = create(:customer)
+        sub1 = create(:subscription)
+        customer.subscriptions << sub1
+        expect(customer.subscriptions.length).to eq(1)
+
+        params = {
+          api_key: customer.api_key,
+          sub_id: sub1.id
+        }
+        
+        post '/api/v1/customer_subscriptions', params: params
+        expect(response).to have_http_status(200)
+        expect(json[:message]).to eq("Customer already subscribed")
+        expect(customer.subscriptions.length).to eq(1)
+      end
+    end
+
     context 'incorrect subsciption id' do
       it 'returns a JSON object with an error message' do
         customer = create(:customer)
