@@ -31,7 +31,7 @@ describe 'POST a customer_subscription' do
         post '/api/v1/customer_subscriptions', params: params
   
         expect(response).to have_http_status(404)
-        expect(json[:message]).to eq("Couldn't find subscription with id 123456789")
+        expect(json[:message]).to eq("Couldn't find Subscription with 'id'=123456789")
       end
     end
   
