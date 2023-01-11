@@ -9,6 +9,7 @@
 customer1 = Customer.create!(first_name: 'bob', last_name: 'fred', email: 'asdfasdf', address: 'asdlkfhjasd', api_key: 123456)
 
 sub1 = Subscription.create!(title: 'asdf', price: '1232', frequency: '12')
+sub2 = Subscription.create!(title: 'some', price: '1111', frequency: '1')
 
 tea1 = Tea.create!(title: 'asdfasdf', description: 'asdkljasdfhjkasfhjkasfgkhasdfghujk', brew_time: '12', temperature: '123')
 
