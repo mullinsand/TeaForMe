@@ -43,8 +43,9 @@ This section describes the endpoints in the backend API. For each endpoint, the 
 
 #### Request Structure
 ```
-GET http://localhost:3000/api/v1/customer/subscriptions
+GET http://localhost:3000/api/v1/customer/subscriptions?api_key=123456
 ```
+ - params are `api_key` which is the key associated with the customer
 #### Sample Response
 ```
 {
@@ -79,8 +80,11 @@ ___
 
 #### Request Structure
 ```
-POST http://localhost:3000/api/v1/customer_subscription
+POST http://localhost:3000/api/v1/customer_subscription?api_key=123456&sub_id=2
 ```
+ - params are
+    - `api_key` which is the key associated with the customer
+    - `sub_id` which is the ID of the specific subscription
 #### Sample Response
 ```
 {
@@ -93,8 +97,13 @@ ___
 
 #### Request Structure
 ```
-PATCH/PUT http://localhost:3000/api/v1/customer_subscription
+PATCH/PUT http://localhost:3000/api/v1/customer_subscription?api_key=123456&sub_id=2&status=cancelled
 ```
+ - params are
+    - `api_key` which is the key associated with the customer
+    - `sub_id` which is the ID of the specific subscription
+    - `status` which is the status of the subscription in relation to the customer
+      - accepted values are `active` and  `cancelled`
 #### Sample Response
 ```
 {
