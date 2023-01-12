@@ -32,7 +32,7 @@ Built in Rails on a Postgresql database and written in Ruby.
 
 ## Database Schema
 
-<!-- <img width="1014" alt="Screen Shot 2022-12-13 at 10 24 58 AM" src="https://user-images.githubusercontent.com/105316027/207402333-43dd36f7-217f-4543-a262-d785ad973c32.png"> -->
+<img src="./app/assets/images/schema.png" alt="The schema of the project includes 5 tables."  width="900" height="500" />
 
 
 ## API Endpoints
@@ -43,8 +43,9 @@ This section describes the endpoints in the backend API. For each endpoint, the 
 
 #### Request Structure
 ```
-GET */customer/subscriptions
+GET http://localhost:3000/api/v1/customer/subscriptions?api_key=123456
 ```
+ - params are `api_key` which is the key associated with the customer
 #### Sample Response
 ```
 {
@@ -79,8 +80,11 @@ ___
 
 #### Request Structure
 ```
-POST */customer_subscription
+POST http://localhost:3000/api/v1/customer_subscription?api_key=123456&sub_id=2
 ```
+ - params are
+    - `api_key` which is the key associated with the customer
+    - `sub_id` which is the ID of the specific subscription
 #### Sample Response
 ```
 {
@@ -93,8 +97,13 @@ ___
 
 #### Request Structure
 ```
-PATCH/PUT */customer_subscription
+PATCH/PUT http://localhost:3000/api/v1/customer_subscription?api_key=123456&sub_id=2&status=cancelled
 ```
+ - params are
+    - `api_key` which is the key associated with the customer
+    - `sub_id` which is the ID of the specific subscription
+    - `status` which is the status of the subscription in relation to the customer
+      - accepted values are `active` and  `cancelled`
 #### Sample Response
 ```
 {
