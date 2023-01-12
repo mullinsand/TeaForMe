@@ -32,7 +32,7 @@ Built in Rails on a Postgresql database and written in Ruby.
 
 ## Database Schema
 
-<!-- <img width="1014" alt="Screen Shot 2022-12-13 at 10 24 58 AM" src="https://user-images.githubusercontent.com/105316027/207402333-43dd36f7-217f-4543-a262-d785ad973c32.png"> -->
+<img src="./app/assets/images/schema.png" alt="The schema of the project includes 5 tables."  width="900" height="500" />
 
 
 ## API Endpoints
