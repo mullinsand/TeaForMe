@@ -43,7 +43,7 @@ This section describes the endpoints in the backend API. For each endpoint, the 
 
 #### Request Structure
 ```
-GET */customer/subscriptions
+GET http://localhost:3000/api/v1/customer/subscriptions
 ```
 #### Sample Response
 ```
@@ -79,7 +79,7 @@ ___
 
 #### Request Structure
 ```
-POST */customer_subscription
+POST http://localhost:3000/api/v1/customer_subscription
 ```
 #### Sample Response
 ```
@@ -93,7 +93,7 @@ ___
 
 #### Request Structure
 ```
-PATCH/PUT */customer_subscription
+PATCH/PUT http://localhost:3000/api/v1/customer_subscription
 ```
 #### Sample Response
 ```
