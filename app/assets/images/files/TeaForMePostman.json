@@ -1,0 +1,34 @@
+{
+	"info": {
+		"_postman_id": "ae51fc5c-9eeb-422b-bcf7-a628caf69b39",
+		"name": "Manage Subscriptions for a Single Customer",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23627265"
+	},
+	"item": [
+		{
+			"name": "Customer with subs",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "Add new sub",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "change status to cancelled",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	]
+}

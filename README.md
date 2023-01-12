@@ -28,7 +28,7 @@ Built in Rails on a Postgresql database and written in Ruby.
 - `rails db:{create,migrate,seed}`
 - run the server with 'rails s'
 - Go to Postman and use one of the endpoints listed below
-- Alternatively you can download the Postman Suite and run the [premade endpoints](./app/assets/files/TeaForYou.postman_collection.json)
+- Alternatively you can download the Postman Suite and run the [premade endpoints](./app/assets/images/files/TeaForMePostman.json)
 
 ## Database Schema
 
