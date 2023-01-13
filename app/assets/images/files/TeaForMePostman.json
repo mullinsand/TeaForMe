@@ -10,23 +10,93 @@
 			"name": "Customer with subs",
 			"request": {
 				"method": "GET",
-				"header": []
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/v1/customer/subscriptions?api_key=123456",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"customer",
+						"subscriptions"
+					],
+					"query": [
+						{
+							"key": "api_key",
+							"value": "123456"
+						}
+					]
+				}
 			},
 			"response": []
 		},
 		{
 			"name": "Add new sub",
 			"request": {
-				"method": "GET",
-				"header": []
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/v1/customer_subscriptions?api_key=123456&sub_id=2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"customer_subscriptions"
+					],
+					"query": [
+						{
+							"key": "api_key",
+							"value": "123456"
+						},
+						{
+							"key": "sub_id",
+							"value": "2"
+						}
+					]
+				}
 			},
 			"response": []
 		},
 		{
 			"name": "change status to cancelled",
 			"request": {
-				"method": "GET",
-				"header": []
+				"method": "PATCH",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/v1/customer_subscriptions?api_key=123456&sub_id=2&status=cancelled",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"customer_subscriptions"
+					],
+					"query": [
+						{
+							"key": "api_key",
+							"value": "123456"
+						},
+						{
+							"key": "sub_id",
+							"value": "2"
+						},
+						{
+							"key": "status",
+							"value": "cancelled"
+						}
+					]
+				}
 			},
 			"response": []
 		}
